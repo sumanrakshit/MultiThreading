@@ -12,7 +12,8 @@ public class BlockingQueueMain {
                 e.printStackTrace();
             }
 
-        });Thread consumer = new Thread(() -> {
+        });
+        Thread consumer = new Thread(() -> {
             try {
                 for (int i = 0; i < 7; i++) {
                     pc.consume();
