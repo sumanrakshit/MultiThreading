@@ -8,7 +8,6 @@ public class DeaLockReentral {
 
         Runnable rb=()->
         {
-
             try
             {
                 if(lock1.tryLock())
@@ -27,7 +26,6 @@ public class DeaLockReentral {
                         lock1.unlock();
                     }
                 }
-
             }
             catch (Exception ex)
             {

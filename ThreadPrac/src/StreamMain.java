@@ -41,6 +41,7 @@ public class StreamMain {
         }
 
         long secondHighestCount = countsDesc.get(1);
+        System.out.println(secondHighestCount);
 
         // Get all characters with the second highest count (distinct keys)
         List<Character> secondMostFreqChars = charCount.entrySet().stream()

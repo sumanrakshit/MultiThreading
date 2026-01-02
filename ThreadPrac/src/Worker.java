@@ -2,29 +2,58 @@ import java.util.concurrent.CountDownLatch;
 
 public class Worker implements Runnable{
 
-    private  CountDownLatch latch;
-    private  int id;
+    private CountDownLatch latch;
+    private int id;
     public Worker(CountDownLatch latch, int id)
     {
         this.latch=latch;
         this.id=id;
-
     }
     @Override
     public void run() {
 
-        try {
-            System.out.println("Worker "+ id +"start");
-            Thread.sleep(100);
-            System.out.println("Worker completed");
+        try
+        {
+            System.out.println("Worker" + id +"started");
+            Thread.sleep(1000);
+            System.out.println("Worker thread completed ");
 
         }
-        catch (Exception ex)
+        catch(Exception ex)
         {
             System.out.println(ex.getMessage());
         }
         finally {
-            latch.countDown(); // signal completion
+            latch.countDown();
         }
+
     }
+
+
+//
+//    private  CountDownLatch latch;
+//    private  int id;
+//    public Worker(CountDownLatch latch, int id)
+//    {
+//        this.latch=latch;
+//        this.id=id;
+//
+//    }
+//    @Override
+//    public void run() {
+//
+//        try {
+//            System.out.println("Worker "+ id +"start");
+//            Thread.sleep(100);
+//            System.out.println("Worker completed");
+//
+//        }
+//        catch (Exception ex)
+//        {
+//            System.out.println(ex.getMessage());
+//        }
+//        finally {
+//            latch.countDown(); // signal completion
+//        }
+//    }
 }
